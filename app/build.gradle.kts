@@ -20,6 +20,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -82,4 +83,11 @@ dependencies {
     annotationProcessor(libs.compiler)
 
     implementation(libs.blurview)
+
+    //SupaBase
+
+    implementation("io.github.jan-tennert.supabase:realtime-kt:2.0.1")
+    implementation("io.github.jan-tennert.supabase:storage-kt:2.0.1")
+    implementation("io.github.jan-tennert.supabase:postgrest-kt:2.0.1")
+
 }

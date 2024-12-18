@@ -1,60 +1,91 @@
 package com.example.coffeeshop2v.Fragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.coffeeshop2v.Adapter.ListItemAdapter
 import com.example.coffeeshop2v.R
+import com.example.coffeeshop2v.ViewModel.MainViewModel
+import com.example.coffeeshop2v.databinding.FragmentListBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ListFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ListFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class ListFragment : BaseFragment<FragmentListBinding>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    private val viewModel = MainViewModel()
+
+    override fun inflateBinding(
+        inflater: LayoutInflater,
+        container: ViewGroup?
+    ): FragmentListBinding {
+        return FragmentListBinding.inflate(inflater, container, false)
+    }
+
+    @SuppressLint("SetTextI18n")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binging.menuButton.setOnClickListener {
+            findNavController().navigate(R.id.action_listFragment_to_mainFragment)
         }
-    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_list, container, false)
-    }
+        binging.listFragmentTitleText.text =
+            ListFragmentArgs.Companion.fromBundle(requireArguments()).title
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ListFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ListFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+        val id = ListFragmentArgs.Companion.fromBundle(requireArguments()).id
+        when (id) {
+            1 -> binging.listFragmentCategoryImage
+                .setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_1))
+
+            2 -> binging.listFragmentCategoryImage
+                .setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_2))
+
+            3 -> binging.listFragmentCategoryImage
+                .setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_3))
+
+            4 -> binging.listFragmentCategoryImage
+                .setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_4))
+
+            5 -> binging.listFragmentCategoryImage
+                .setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_5))
+
+            6 -> binging.listFragmentCategoryImage
+                .setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_6))
+
+            7 -> binging.listFragmentCategoryImage
+                .setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_7))
+
+            8 -> binging.listFragmentCategoryImage
+                .setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_8))
+
+            9 -> binging.listFragmentCategoryImage
+                .setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_9))
+        }
+
+        binging.progressBar.visibility = View.VISIBLE
+        viewModel.loadFiltered(id).observe(requireActivity()) { item ->
+            if (item.isEmpty()) {
+                binging.emptyText.visibility = View.VISIBLE
+            } else {
+                binging.emptyText.visibility = View.GONE
+                binging.listFragmentRecyclerView.layoutManager = LinearLayoutManager(
+                    requireActivity(),
+                    LinearLayoutManager.VERTICAL, false
+                )
+                binging.listFragmentRecyclerView.adapter = ListItemAdapter(item) { item ->
+                    val action =
+                        ListFragmentDirections.Companion.actionListFragmentToDetailFragment(item)
+                    findNavController().navigate(action)
                 }
+                binging.progressBar.visibility = View.GONE
             }
+        }
+
     }
+
+
 }

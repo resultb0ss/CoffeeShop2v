@@ -14,5 +14,19 @@
     <string name="cake">Cake</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="listFragmentMenuTitle">title</string>
+    <string name="listFragmentListIsEmptyText">List is Empty</string>
+    <string name="viewHolderItemTitleText">title</string>
+    <string name="viewHolderItemSubtitleText">Subtitle</string>
+    <string name="viewHolderItemPriceText">$0</string>
+    <string name="detailFragmentTitleText">Title</string>
+    <string name="detailFragmentSubTitleText">Subtitle</string>
+    <string name="detailFragmentPriceText">$0</string>
+    <string name="detailFragmentDescriptionText">Description</string>
+    <string name="detailFragmentSizeText">Size</string>
+    <string name="detailFragmentSizeButtonS">S</string>
+    <string name="detailFragmentSizeButtonM">M</string>
+    <string name="detailFragmentSizeButtonL">L</string>
+    <string name="detailFragmentBuyButton">Buy now</string>
 
 </resources>
