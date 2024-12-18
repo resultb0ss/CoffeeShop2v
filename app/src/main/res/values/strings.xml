@@ -1,5 +1,18 @@
 <resources>
     <string name="app_name">CoffeeShop2v</string>
     <string name="find_the_best_coffee_n_you">Find the best coffee\n for you</string>
+    <string name="good_morning">Good Morning</string>
+    <string name="select_category">Select Category</string>
+    <string name="ice_drink">Ice Drink</string>
+    <string name="hot_drink">Hot Drink</string>
+    <string name="hot_coffee">Hot Coffee</string>
+    <string name="ice_coffee">Ice Coffee</string>
+    <string name="brewing_coffee">Brewing Coffee</string>
+    <string name="shake">Shake</string>
+    <string name="restaurant">Restaurant</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="cake">Cake</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

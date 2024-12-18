@@ -1,6 +1,7 @@
 [versions]
 androidxJunit = "1.2.1"
 appcompatVersion = "1.7.0"
+blurview = "version-2.0.5"
 constraintlayoutVersion = "2.1.4"
 coreKtxVersion = "1.13.1"
 espressoCoreVersion = "3.6.1"
@@ -48,6 +49,7 @@ androidx-recyclerview-selection = { module = "androidx.recyclerview:recyclerview
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntime" }
 androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+blurview = { module = "com.github.Dimezis:BlurView", version.ref = "blurview" }
 compiler = { module = "com.github.bumptech.glide:compiler", version.ref = "glide" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "retrofit" }
 glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
