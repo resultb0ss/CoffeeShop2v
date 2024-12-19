@@ -40,7 +40,6 @@ class ListFragment : BaseFragment<FragmentListBinding>() {
 
         binging.listFragmentTitleText.text = title
 
-        Log.d("@@@", "Id $id")
         when (id) {
             1 -> binging.listFragmentCategoryImage
                 .setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_1))
@@ -73,10 +72,8 @@ class ListFragment : BaseFragment<FragmentListBinding>() {
         binging.progressBar.visibility = View.VISIBLE
         viewModel.loadFiltered(id).observe(requireActivity()) { item ->
             if (item.isEmpty()) {
-                Log.d("@@@", "Observer item empty $item")
                 binging.emptyText.visibility = View.VISIBLE
             } else {
-                Log.d("@@@", "Observer item not empty $item")
                 binging.emptyText.visibility = View.GONE
                 binging.listFragmentRecyclerView.layoutManager = LinearLayoutManager(
                     requireActivity(),

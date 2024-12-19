@@ -24,7 +24,6 @@ class IntroFragment : BaseFragment<FragmentIntroBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d("@@@", "OnView IntroFragment")
         Handler(Looper.getMainLooper()).postDelayed({
             findNavController().navigate(R.id.action_introFragment_to_mainFragment)
         }, 2000)

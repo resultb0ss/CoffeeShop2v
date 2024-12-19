@@ -30,12 +30,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
             mainFragmentButtonHotDrink.setOnClickListener { toListFragment(3, "Hot Drink") }
             mainFragmentButtonHotCoffee.setOnClickListener { toListFragment(1, "Hot Coffee") }
             mainFragmentButtonIceCoffee.setOnClickListener { toListFragment(4, "Ice Coffee") }
-            mainFragmentButtonBrewingCoffee.setOnClickListener {
-                toListFragment(
-                    5,
-                    "Brewing Coffee"
-                )
-            }
+            mainFragmentButtonBrewingCoffee.setOnClickListener { toListFragment(5,"Brewing Coffee")}
             mainFragmentButtonShake.setOnClickListener { toListFragment(6, "Shake") }
             mainFragmentButtonRestaurant.setOnClickListener { toListFragment(7, "Restaurant") }
             mainFragmentButtonBreakfast.setOnClickListener { toListFragment(8, "Breakfast") }

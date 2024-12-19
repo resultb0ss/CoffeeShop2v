@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
 
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        Log.d("@@@", "OnView MainActivity")
     }
 
     override fun onDestroy() {

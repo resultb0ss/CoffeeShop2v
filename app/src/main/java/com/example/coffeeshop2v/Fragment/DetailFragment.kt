@@ -57,6 +57,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
                 findNavController().navigate(action)
             }
 
+
             detailFragmentSizeButtonS.setOnClickListener {
                 detailFragmentSizeButtonS.setBackgroundDrawable(
                     ContextCompat
@@ -109,8 +110,13 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
                 detailFragmentSizeButtonS.setTextColor(resources.getColor(R.color.white))
                 detailFragmentSizeButtonM.setTextColor(resources.getColor(R.color.white))
                 detailFragmentSizeButtonL.setTextColor(resources.getColor(R.color.orange))
+
             }
+
+
+
         }
+
     }
 
 }
