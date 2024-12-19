@@ -4,13 +4,13 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
     id("org.jetbrains.kotlin.plugin.parcelize")
     id("com.google.devtools.ksp")
-    id("dagger.hilt.android.plugin")
+    kotlin("plugin.serialization") version "2.1.0"
 //    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
     namespace = "com.example.coffeeshop2v"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.coffeeshop2v"
@@ -71,12 +71,10 @@ dependencies {
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.recyclerview.selection)
 
-    // Hilt
-    implementation(libs.hilt.android.v244)
-    implementation(libs.firebase.database)
-    implementation(libs.androidx.activity)
-    implementation(libs.firebase.messaging)
-    ksp(libs.hilt.android.compiler)
+    // Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
+
 
     // Glide (for images)
     implementation(libs.glide)
@@ -86,8 +84,14 @@ dependencies {
 
     //SupaBase
 
-    implementation("io.github.jan-tennert.supabase:realtime-kt:2.0.1")
-    implementation("io.github.jan-tennert.supabase:storage-kt:2.0.1")
-    implementation("io.github.jan-tennert.supabase:postgrest-kt:2.0.1")
+    implementation("io.github.jan-tennert.supabase:realtime-kt:3.0.3")
+    implementation("io.github.jan-tennert.supabase:storage-kt:3.0.3")
+    implementation("io.github.jan-tennert.supabase:postgrest-kt:3.0.3")
+
+    implementation("io.github.jan-tennert.supabase:serializer-jackson:3.0.3")
+    implementation(platform("io.github.jan-tennert.supabase:bom:3.0.3"))
+    implementation("io.ktor:ktor-client-cio:3.0.2")
+
+
 
 }

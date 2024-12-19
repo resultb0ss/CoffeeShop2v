@@ -30,6 +30,7 @@ class ListFragment : BaseFragment<FragmentListBinding>() {
         super.onViewCreated(view, savedInstanceState)
 
         binging.menuButton.setOnClickListener {
+
             findNavController().navigate(R.id.action_listFragment_to_mainFragment)
         }
 
