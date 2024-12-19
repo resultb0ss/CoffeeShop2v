@@ -37,8 +37,8 @@
                     android:id="@+id/backButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="@dimen/middleMargin"
+                    android:layout_marginTop="@dimen/middleMargin"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/back" />
@@ -47,7 +47,7 @@
                     android:id="@+id/favButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="@dimen/middleMargin"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/backButton"
                     app:srcCompat="@drawable/favorite_white" />
@@ -58,19 +58,20 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_margin="16dp"
+                android:layout_margin="@dimen/middleMargin"
                 android:background="@drawable/dark_grey_bg">
 
                 <TextView
                     android:id="@+id/detailFragmentTitleText"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginStart="@dimen/middleMargin"
+                    android:layout_marginTop="@dimen/middleMargin"
                     android:text="@string/detailFragmentTitleText"
                     android:textColor="@color/white"
-                    android:textSize="22sp"
+                    android:textSize="@dimen/largeText"
                     android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/detailFragmentPriceText"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,22 +79,22 @@
                     android:id="@+id/detailFragmentSubtitleText"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="32dp"
+                    android:layout_marginBottom="@dimen/smallMargin"
                     android:text="@string/detailFragmentSubTitleText"
                     android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/detailFragmentTitleText" />
+                    app:layout_constraintStart_toStartOf="@+id/detailFragmentTitleText"
+                    app:layout_constraintTop_toBottomOf="@+id/detailFragmentTitleText" />
 
                 <TextView
                     android:id="@+id/detailFragmentPriceText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginTop="@dimen/middleMargin"
+                    android:layout_marginEnd="@dimen/middleMargin"
                     android:text="@string/detailFragmentPriceText"
                     android:textColor="@color/orange"
-                    android:textSize="16sp"
+                    android:textSize="@dimen/middleText"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -103,7 +104,7 @@
                 android:id="@+id/detailFragmentDescriptionText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_margin="@dimen/middleMargin"
                 android:text="@string/detailFragmentDescriptionText"
                 android:textColor="@color/white" />
 
@@ -111,16 +112,16 @@
                 android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="@dimen/middleMargin"
                 android:text="@string/detailFragmentSizeText"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="@dimen/middleText"
                 android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/smallMargin"
                 android:orientation="horizontal">
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -128,36 +129,36 @@
                     style="@android:style/Widget.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_margin="@dimen/smallMargin"
                     android:layout_weight="1"
                     android:background="@drawable/orange_stroke_bg"
                     android:text="@string/detailFragmentSizeButtonS"
                     android:textColor="@color/orange"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/middleText" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/detailFragmentSizeButtonM"
                     style="@android:style/Widget.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_margin="@dimen/smallMargin"
                     android:layout_weight="1"
                     android:background="@drawable/dark_grey_bg2"
                     android:text="@string/detailFragmentSizeButtonM"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/middleText" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/detailFragmentSizeButtonL"
                     style="@android:style/Widget.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
+                    android:layout_margin="@dimen/smallMargin"
                     android:layout_weight="1"
                     android:background="@drawable/dark_grey_bg2"
                     android:text="@string/detailFragmentSizeButtonL"
                     android:textColor="@color/white"
-                    android:textSize="16sp" />
+                    android:textSize="@dimen/middleText" />
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -165,7 +166,7 @@
                 style="@android:style/Widget.Button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
+                android:layout_margin="@dimen/middleMargin"
                 android:background="@drawable/orange_bg"
                 android:text="@string/detailFragmentBuyButton"
                 android:textColor="@color/white"

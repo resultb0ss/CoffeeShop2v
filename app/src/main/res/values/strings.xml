@@ -1,24 +1,34 @@
 <resources>
     <string name="app_name">CoffeeShop2v</string>
-    <string name="find_the_best_coffee_n_you">Find the best coffee\n for you</string>
-    <string name="good_morning">Good Morning</string>
-    <string name="select_category">Select Category</string>
-    <string name="ice_drink">Ice Drink</string>
-    <string name="hot_drink">Hot Drink</string>
-    <string name="hot_coffee">Hot Coffee</string>
-    <string name="ice_coffee">Ice Coffee</string>
-    <string name="brewing_coffee">Brewing Coffee</string>
-    <string name="shake">Shake</string>
-    <string name="restaurant">Restaurant</string>
-    <string name="breakfast">Breakfast</string>
-    <string name="cake">Cake</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--Intro Fragment-->
+    <string name="introFragmentTitleText">Find the best coffee\n for you</string>
+    <string name="introFragmentSubtitleText">Good Morning</string>
+    <string name="introFragmentContentDescription">IntroImage</string>
+    <string name="introFragmentCoffeeShopText">Coffee Shop</string>
+
+    <!--Main Fragment-->
+    <string name="mainFragmentTitleText">Select Category</string>
+    <string name="mainFragmentMenuItemTextIceDrink">Ice Drink</string>
+    <string name="mainFragmentMenuItemTextHotDrink">Hot Drink</string>
+    <string name="mainFragmentMenuItemTextHotCoffee">Hot Coffee</string>
+    <string name="mainFragmentMenuItemTextIceCoffee">Ice Coffee</string>
+    <string name="mainFragmentMenuItemTextBrewingCoffee">Brewing Coffee</string>
+    <string name="mainFragmentMenuItemTextShake">Shake</string>
+    <string name="mainFragmentMenuItemTextRestaurant">Restaurant</string>
+    <string name="mainFragmentMenuItemTextBreakfast">Breakfast</string>
+    <string name="mainFragmentMenuItemTextCake">Cake</string>
+
+    <!--List Fragment-->
     <string name="listFragmentMenuTitle">title</string>
     <string name="listFragmentListIsEmptyText">List is Empty</string>
+
+    <!--Recycler View Item-->
     <string name="viewHolderItemTitleText">title</string>
     <string name="viewHolderItemSubtitleText">Subtitle</string>
     <string name="viewHolderItemPriceText">$0</string>
+
+    <!--Detail Fragment-->
     <string name="detailFragmentTitleText">Title</string>
     <string name="detailFragmentSubTitleText">Subtitle</string>
     <string name="detailFragmentPriceText">$0</string>

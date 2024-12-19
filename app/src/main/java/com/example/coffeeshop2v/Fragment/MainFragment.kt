@@ -55,7 +55,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>() {
             .setFrameClearDrawable(windowBackGround)
             .setBlurRadius(radius)
 
-        binging.blurView.setOutlineProvider(ViewOutlineProvider.BACKGROUND)
+        binging.blurView.outlineProvider = ViewOutlineProvider.BACKGROUND
         binging.blurView.clipToOutline = true
     }
 

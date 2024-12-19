@@ -1,5 +1,6 @@
 package com.example.coffeeshop2v.Fragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,7 +21,6 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
     private var categoryId: Int = 0
     private var categoryTitle: String = ""
 
-
     override fun inflateBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
@@ -36,6 +36,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
         bundle()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun bundle() {
         item = DetailFragmentArgs.Companion.fromBundle(requireArguments()).item
         binging.apply {

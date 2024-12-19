@@ -22,15 +22,15 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:layout_marginHorizontal="16dp"
-                android:layout_marginTop="48dp"
+                android:layout_marginHorizontal="@dimen/middleMargin"
+                android:layout_marginTop="@dimen/largeMargin"
                 android:background="@drawable/gray_bg">
 
                 <ImageView
                     android:id="@+id/menuButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="@dimen/middleMargin"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -39,8 +39,7 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginVertical="@dimen/smallMargin"
                     android:background="@drawable/light_grey_bg"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
@@ -53,7 +52,7 @@
                         android:id="@+id/listFragmentCategoryImage"
                         android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="@dimen/middleMargin"
                         android:layout_weight="1"
                         app:srcCompat="@drawable/ic_3" />
 
@@ -61,8 +60,7 @@
                         android:id="@+id/listFragmentTitleText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="24dp"
-                        android:layout_marginEnd="24dp"
+                        android:layout_marginHorizontal="@dimen/largeMargin"
                         android:layout_weight="1"
                         android:text="@string/listFragmentMenuTitle"
                         android:textColor="@color/white"
@@ -74,7 +72,7 @@
                 android:id="@+id/listFragmentRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="16dp" />
+                android:layout_marginTop="@dimen/middleMargin" />
         </LinearLayout>
     </ScrollView>
 

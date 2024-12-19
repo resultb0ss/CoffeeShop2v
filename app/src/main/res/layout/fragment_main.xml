@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:fontFamily="@font/pristina"
-        android:text="@string/good_morning"
+        android:text="@string/introFragmentSubtitleText"
         android:textColor="@color/white"
         android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,8 +37,7 @@
         android:id="@+id/blurView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginHorizontal="@dimen/middleMargin"
         android:layout_marginBottom="48dp"
         android:background="@drawable/blur_background"
         app:blurOverlayColor="#10ffffff"
@@ -55,11 +54,11 @@
                 android:id="@+id/mainFragmentSubTitleText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="@string/select_category"
+                android:layout_margin="@dimen/middleMargin"
+                android:text="@string/mainFragmentTitleText"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="23sp"
+                android:textSize="@dimen/largeText"
                 android:textStyle="bold" />
 
             <LinearLayout style="@style/mainFragmentButtonHorizontalLayoutStyle">
@@ -74,7 +73,7 @@
 
                     <TextView
                         style="@style/mainFragmentButtonTextStyle"
-                        android:text="@string/ice_drink" />
+                        android:text="@string/mainFragmentMenuItemTextIceDrink" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -87,7 +86,7 @@
 
                     <TextView
                         style="@style/mainFragmentButtonTextStyle"
-                        android:text="@string/hot_drink" />
+                        android:text="@string/mainFragmentMenuItemTextHotDrink" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -100,7 +99,7 @@
 
                     <TextView
                         style="@style/mainFragmentButtonTextStyle"
-                        android:text="@string/hot_coffee" />
+                        android:text="@string/mainFragmentMenuItemTextHotCoffee" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -116,7 +115,7 @@
 
                     <TextView
                         style="@style/mainFragmentButtonTextStyle"
-                        android:text="@string/ice_coffee" />
+                        android:text="@string/mainFragmentMenuItemTextIceCoffee" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -130,7 +129,7 @@
                     <TextView
 
                         style="@style/mainFragmentButtonTextStyle"
-                        android:text="@string/brewing_coffee" />
+                        android:text="@string/mainFragmentMenuItemTextBrewingCoffee" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -143,7 +142,7 @@
 
                     <TextView
                         style="@style/mainFragmentButtonTextStyle"
-                        android:text="@string/shake" />
+                        android:text="@string/mainFragmentMenuItemTextShake" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -160,7 +159,7 @@
                     <TextView
 
                         style="@style/mainFragmentButtonTextStyle"
-                        android:text="@string/restaurant" />
+                        android:text="@string/mainFragmentMenuItemTextRestaurant" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -173,7 +172,7 @@
 
                     <TextView
                         style="@style/mainFragmentButtonTextStyle"
-                        android:text="@string/breakfast" />
+                        android:text="@string/mainFragmentMenuItemTextBreakfast" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -186,7 +185,7 @@
 
                     <TextView
                         style="@style/mainFragmentButtonTextStyle"
-                        android:text="@string/cake" />
+                        android:text="@string/mainFragmentMenuItemTextCake" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>

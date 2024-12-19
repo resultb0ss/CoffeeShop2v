@@ -4,6 +4,8 @@ plugins {
     id("androidx.navigation.safeargs.kotlin")
     id("org.jetbrains.kotlin.plugin.parcelize")
     id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
+    id("kotlin-kapt")
     kotlin("plugin.serialization") version "2.1.0"
 //    alias(libs.plugins.google.gms.google.services)
 }
@@ -66,7 +68,8 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.fragment.ktx)
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.7")
+
     // RecyclerView
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.recyclerview.selection)
@@ -75,22 +78,25 @@ dependencies {
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
 
-
     // Glide (for images)
     implementation(libs.glide)
     annotationProcessor(libs.compiler)
 
+    //For BlurBackground
     implementation(libs.blurview)
 
     //SupaBase
-
     implementation("io.github.jan-tennert.supabase:realtime-kt:3.0.3")
     implementation("io.github.jan-tennert.supabase:storage-kt:3.0.3")
     implementation("io.github.jan-tennert.supabase:postgrest-kt:3.0.3")
-
     implementation("io.github.jan-tennert.supabase:serializer-jackson:3.0.3")
     implementation(platform("io.github.jan-tennert.supabase:bom:3.0.3"))
     implementation("io.ktor:ktor-client-cio:3.0.2")
+
+    //DaggerHilt
+    implementation("com.google.dagger:hilt-android:2.52")
+    kapt("com.google.dagger:hilt-compiler:2.52")
+
 
 
 
