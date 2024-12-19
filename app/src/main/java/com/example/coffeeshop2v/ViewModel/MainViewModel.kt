@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.coffeeshop2v.Database.SupabaseClient.client
 import com.example.coffeeshop2v.Model.ItemsModel
-import com.example.coffeeshop2v.Repository.MainRepository
 import io.github.jan.supabase.postgrest.from
 import io.github.jan.supabase.postgrest.postgrest
 import io.github.jan.supabase.postgrest.query.Columns
@@ -18,33 +17,25 @@ import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
 
-
-    private val repository = MainRepository()
-
     fun loadFiltered(id: Int): LiveData<MutableList<ItemsModel>> {
         val listData = MutableLiveData<MutableList<ItemsModel>>()
-        listData.value = getData(id)
-        return listData
-    }
-
-    fun getData(id:Int): MutableList<ItemsModel> {
-
         val dataList = mutableListOf<ItemsModel>()
 
         viewModelScope.launch {
-            val response = client.from("main").select()
-//            {
-////                filter {
-////                    eq("categoryId", id)
-////                }
-//            }
-//            val data = response.decodeList<ItemsModel>()
-            Log.d("@@@","DataA${response}")
-//            dataList.addAll(data)
+            val response = client.from("main").select(Columns.ALL)
+            {
+                filter {
+                    eq("categoryId", id)
+                }
+            }
+            val data = response.decodeList<ItemsModel>()
+            dataList.addAll(data)
+            listData.value = dataList
         }
-        return dataList
 
+        return listData
     }
+
 
 
 }

@@ -31,7 +31,7 @@ class ListItemAdapter(val items: MutableList<ItemsModel>, val onClick: (ItemsMod
         holder.binding.viewHolderItemPriceTextView.text = "$${item.price}"
         holder.binding.viewHolderItemSubtitleTextView.text = item.extra
 
-        Glide.with(holder.itemView.context).load(item.picUrl[0])
+        Glide.with(holder.itemView.context).load(item.picUrl)
             .into(holder.binding.viewHolderItemImage)
 
         holder.itemView.setOnClickListener{

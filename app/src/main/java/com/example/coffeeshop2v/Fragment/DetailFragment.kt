@@ -17,6 +17,9 @@ import com.example.coffeeshop2v.databinding.FragmentDetailBinding
 class DetailFragment : BaseFragment<FragmentDetailBinding>() {
 
     private lateinit var item: ItemsModel
+    private var categoryId: Int = 0
+    private var categoryTitle: String = ""
+
 
     override fun inflateBinding(
         inflater: LayoutInflater,
@@ -28,6 +31,8 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        categoryId = DetailFragmentArgs.Companion.fromBundle(requireArguments()).categoryId
+        categoryTitle = DetailFragmentArgs.Companion.fromBundle(requireArguments()).categoryTitle
         bundle()
     }
 
@@ -39,12 +44,17 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>() {
             detailFragmentDescriptionText.text = item.description
             detailFragmentPriceText.text = "$" + item.price.toString()
 
-            Glide.with(requireContext()).load(item.picUrl[0]).apply(
+            Glide.with(requireContext()).load(item.picUrl).apply(
                 RequestOptions.bitmapTransform(RoundedCorners(100))
             ).into(binging.detailFragmentMainImage)
 
             backButton.setOnClickListener {
-                findNavController().navigate(R.id.action_detailFragment_to_listFragment)
+
+                val action = DetailFragmentDirections.Companion.actionDetailFragmentToListFragment(
+                    categoryId,
+                    categoryTitle
+                )
+                findNavController().navigate(action)
             }
 
             detailFragmentSizeButtonS.setOnClickListener {

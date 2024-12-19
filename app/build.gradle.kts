@@ -66,7 +66,7 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.fragment.ktx)
-
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0")
     // RecyclerView
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.recyclerview.selection)

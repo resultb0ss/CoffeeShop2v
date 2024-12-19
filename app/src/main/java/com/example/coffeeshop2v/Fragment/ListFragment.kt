@@ -2,6 +2,7 @@ package com.example.coffeeshop2v.Fragment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,10 +35,12 @@ class ListFragment : BaseFragment<FragmentListBinding>() {
             findNavController().navigate(R.id.action_listFragment_to_mainFragment)
         }
 
-        binging.listFragmentTitleText.text =
-            ListFragmentArgs.Companion.fromBundle(requireArguments()).title
-
         val id = ListFragmentArgs.Companion.fromBundle(requireArguments()).id
+        val title = ListFragmentArgs.Companion.fromBundle(requireArguments()).title
+
+        binging.listFragmentTitleText.text = title
+
+        Log.d("@@@", "Id $id")
         when (id) {
             1 -> binging.listFragmentCategoryImage
                 .setImageDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.ic_1))
@@ -70,8 +73,10 @@ class ListFragment : BaseFragment<FragmentListBinding>() {
         binging.progressBar.visibility = View.VISIBLE
         viewModel.loadFiltered(id).observe(requireActivity()) { item ->
             if (item.isEmpty()) {
+                Log.d("@@@", "Observer item empty $item")
                 binging.emptyText.visibility = View.VISIBLE
             } else {
+                Log.d("@@@", "Observer item not empty $item")
                 binging.emptyText.visibility = View.GONE
                 binging.listFragmentRecyclerView.layoutManager = LinearLayoutManager(
                     requireActivity(),
@@ -79,7 +84,11 @@ class ListFragment : BaseFragment<FragmentListBinding>() {
                 )
                 binging.listFragmentRecyclerView.adapter = ListItemAdapter(item) { item ->
                     val action =
-                        ListFragmentDirections.Companion.actionListFragmentToDetailFragment(item)
+                        ListFragmentDirections.Companion.actionListFragmentToDetailFragment(
+                            item,
+                            id,
+                            title
+                        )
                     findNavController().navigate(action)
                 }
                 binging.progressBar.visibility = View.GONE
