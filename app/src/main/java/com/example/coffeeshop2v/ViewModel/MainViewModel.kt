@@ -1,6 +1,5 @@
 package com.example.coffeeshop2v.ViewModel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,11 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.coffeeshop2v.Database.SupabaseClient.client
 import com.example.coffeeshop2v.Model.ItemsModel
 import io.github.jan.supabase.postgrest.from
-import io.github.jan.supabase.postgrest.postgrest
 import io.github.jan.supabase.postgrest.query.Columns
-import io.github.jan.supabase.realtime.realtime
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class MainViewModel : ViewModel() {
@@ -35,7 +30,6 @@ class MainViewModel : ViewModel() {
 
         return listData
     }
-
 
 
 }

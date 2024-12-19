@@ -10,6 +10,6 @@ data class ItemsModel(
     var price: Double,
     var extra: String,
     var categoryId: String,
-): Serializable{
+) : Serializable {
 
 }
